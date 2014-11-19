@@ -42,6 +42,9 @@ def init_app(app, db, extra_config_settings={}):
     from app.pages import views
     from app.users import views
 
+    from app.startup.reset_db import reset_db
+    reset_db(app, db)
+
     return app
 
 

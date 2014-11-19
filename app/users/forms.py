@@ -12,14 +12,14 @@ from wtforms import StringField, SubmitField, validators
 class MyRegisterForm(RegisterForm):
     first_name = StringField('First name', validators=[
         validators.DataRequired('First name is required')])
-    last_name = StringField('Last name', validators=[
-        validators.DataRequired('Last name is required')])
+    # last_name = StringField('Last name', validators=[
+    #     validators.DataRequired('Last name is required')])
 
 
 # Define the User profile form
 class UserProfileForm(Form):
     first_name = StringField('First name', validators=[
         validators.DataRequired('First name is required')])
-    last_name = StringField('Last name', validators=[
-        validators.DataRequired('Last name is required')])
+    # last_name = StringField('Last name', validators=[
+    #     validators.DataRequired('Last name is required')])
     submit = SubmitField('Save')

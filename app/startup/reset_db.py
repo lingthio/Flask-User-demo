@@ -37,11 +37,11 @@ def add_user(app, db, username, first_name, last_name, email, password):
     """
     user_auth = UserAuth(username=username, password=app.user_manager.hash_password(password))
     user = User(
-        is_enabled=True,
+        active=True,
         first_name=first_name,
-        last_name=last_name,
-        email=email,
-        confirmed_at=datetime.datetime.now(),
+        # last_name=last_name,
+        # email=email,
+        # confirmed_at=datetime.datetime.now(),
         user_auth=user_auth
     )
     db.session.add(user_auth)

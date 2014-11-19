@@ -24,13 +24,19 @@
         <div class="pull-left"><a href="{{ url_for('home_page') }}"><span class="header-title">MyApp</span></a></div>
         <div class="pull-right">
             {% if current_user.is_authenticated() %}
-                <a href="{{ url_for('user_profile_page') }}">{{ current_user.first_name }}</a>
+                <a href="{{ url_for('user_profile_page') }}">{{ current_user.first_name or current_user.user_auth.username }}</a>
                 &nbsp; | &nbsp;
                 <a href="{{ url_for('user.logout') }}">Sign out</a>
             {% else %}
                 <a href="{{ url_for('user.login') }}">Sign in</a>
             {% endif %}
         </div>
+    </div>
+    <div class="alert alert-info with-margins">
+    <ul>
+        <li>All Flask-User email features have been disabled for this demo.</li>
+        <li>Users are periodically cleaned up and deleted.</li>
+    </ul>
     </div>
     <div class="with-margins">
         <a href="{{ url_for('home_page') }}">Home</a> &nbsp; | &nbsp;

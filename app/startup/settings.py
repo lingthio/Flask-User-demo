@@ -48,6 +48,9 @@ CSRF_ENABLED = True
 
 # Flask-User settings
 USER_APP_NAME = APP_NAME
+
+USER_ENABLE_EMAIL = False
+
 USER_AFTER_LOGIN_ENDPOINT = 'member_page'
 USER_AFTER_LOGOUT_ENDPOINT = 'home_page'
 
